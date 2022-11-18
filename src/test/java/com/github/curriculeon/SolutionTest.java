@@ -27,8 +27,13 @@ public class SolutionTest {
     }
 
     @Test
-    public void test3() {
+    public void test3a() {
         test(3, 1,1,3,4,5,6,7);
+    }
+
+    @Test
+    public void test3b() {
+        test(3, 0,1,2,2);
     }
 
     @Test

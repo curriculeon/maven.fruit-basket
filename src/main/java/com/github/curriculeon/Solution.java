@@ -14,6 +14,7 @@ public class Solution {
             fruitTypeCounter.put(fruitType, numberOfFruit);
         }
         final List<Integer> values = new ArrayList<>(fruitTypeCounter.values());
+        Collections.reverse(values);
         final Function<Integer, Integer> getValue = (value) -> {
             try {
                 return values.get(value);
