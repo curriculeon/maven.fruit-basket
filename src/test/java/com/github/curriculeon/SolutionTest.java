@@ -5,8 +5,7 @@ import org.junit.Test;
 
 public class SolutionTest {
     // given
-    private void test(int expected, int... fruits) {
-        Solution solution = new Solution();
+    private void test(SolutionInterface solution, int expected, int... fruits) {
 
         // when
         int actual = solution.totalFruit(fruits);
@@ -15,39 +14,46 @@ public class SolutionTest {
         Assert.assertEquals(expected, actual);
     }
 
+    private void testSolution1(int expected, int... fruits) {
+        test(new Solution1(), expected, fruits);
+    }
+
+    private void testSolution2(int expected, int... fruits) {
+        test(new Solution2(), expected, fruits);
+    }
 
     @Test
     public void test1() {
-        test(1, Integer.MIN_VALUE);
+        testSolution2(1, Integer.MIN_VALUE);
     }
 
     @Test
     public void test2() {
-        test(2, 1,2,3,4,5,6,7);
+        testSolution2(2, 1, 2, 3, 4, 5, 6, 7);
     }
 
     @Test
     public void test3() {
-        test(3, 1,1,3,4,5,6,7);
+        testSolution1(3, 1, 1, 3, 4, 5, 6, 7);
     }
 
     @Test
     public void test4() {
-        test(4, 1,1,1,4,5,6,7);
+        testSolution1(4, 1, 1, 1, 4, 5, 6, 7);
     }
 
     @Test
     public void test5() {
-        test(5, 0,0,0,1,1,2,3,4,5);
+        testSolution1(5, 0, 0, 0, 1, 1, 2, 3, 4, 5);
     }
 
     @Test
     public void test6() {
-        test(6, 0,0,0,0,1,1,3,4,5);
+        testSolution1(6, 0, 0, 0, 0, 1, 1, 3, 4, 5);
     }
 
     @Test
     public void test8() {
-        test(8, 1,1,1,2,4,4,4,4,4,7);
+        testSolution1(8, 1, 1, 1, 2, 4, 4, 4, 4, 4, 7);
     }
 }
