@@ -45,4 +45,9 @@ public class SolutionTest {
     public void test6() {
         test(6, 0,0,0,0,1,1,3,4,5);
     }
+
+    @Test
+    public void test8() {
+        test(8, 1,1,1,2,4,4,4,4,4,7);
+    }
 }
